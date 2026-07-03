@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: efranca/lab-springboot-app
-  tag: "96e8dc5"
+  tag: "f213883"
   pullPolicy: IfNotPresent
 
 service:
