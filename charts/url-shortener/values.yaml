@@ -1,7 +1,7 @@
 replicaCount: 3
 
 image:
-  repository: erickfranca/url-shortener
+  repository: efranca/url-shortener
   tag: "fe9d555"
   pullPolicy: IfNotPresent
 
