@@ -1,0 +1,13 @@
+replicaCount: 3
+
+image:
+  repository: erickfranca/url-shortener
+  tag: "f213883"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8084
+
+config:
+  environment: "kind"
