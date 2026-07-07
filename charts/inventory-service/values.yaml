@@ -1,0 +1,10 @@
+replicaCount: 2
+
+image:
+  repository: efranca/inventory-service
+  tag: "da409fc"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8085
