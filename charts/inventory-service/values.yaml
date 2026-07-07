@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: efranca/inventory-service
-  tag: "da409fc"
+  tag: "27506cc"
   pullPolicy: IfNotPresent
 
 service:
