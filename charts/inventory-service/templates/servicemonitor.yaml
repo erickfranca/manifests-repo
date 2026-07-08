@@ -4,7 +4,7 @@ metadata:
   name: {{ .Chart.Name }}
   labels:
     app: {{ .Chart.Name }}
-    release: {{ .Chart.Name }}
+    release: kube-prometheus-stack
 spec:
   selector:
     matchLabels:
