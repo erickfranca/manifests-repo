@@ -1,11 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: inventory-service
+  name: {{ .chart.Name}}
+  labels:
+    app: {{ .chart.Name}}
 spec:
   type: {{ .Values.service.type }}
   selector:
-    app: inventory-service
+    app: {{ .chart.Name}}
   ports:
-    - port: {{ .Values.service.port }}
+    - name: http
+      port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.port }}
