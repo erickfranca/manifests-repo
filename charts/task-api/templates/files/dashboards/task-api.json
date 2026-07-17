@@ -113,7 +113,7 @@
                         "uid": "prometheus"
                     },
                     "editorMode": "code",
-                    "expr": "histogram_quantile(0.95,sum(rate(http_server_requests_seconds_bucket{namespace=\"Task-Api\"}[5m]))by(le,uri))",
+                    "expr": "histogram_quantile(0.95,sum(rate(http_server_requests_seconds_bucket{namespace=\"task-api\"}[5m]))by(le,uri))",
                     "legendFormat": "__auto",
                     "range": true,
                     "refId": "A"
@@ -215,7 +215,7 @@
                         "uid": "prometheus"
                     },
                     "editorMode": "code",
-                    "expr": "sum(rate(http_server_requests_seconds_count{namespace=\"Task-Api\"}[5m]))by(uri,status)",
+                    "expr": "sum(rate(http_server_requests_seconds_count{namespace=\"task-api\"}[5m]))by(uri,status)",
                     "legendFormat": "__auto",
                     "range": true,
                     "refId": "A"
