@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: task-api
+  name: {{ .Release.Namespace }}
   labels:
-    app: task-api
+    app: {{ .Release.Namespace }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: task-api
+      app: {{ .Release.Namespace }}
   template:
     metadata:
       labels:
-        app: task-api
+        app: {{ .Release.Namespace }}
     spec:
       containers:
-        - name: task-api
+        - name: {{ .Release.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
