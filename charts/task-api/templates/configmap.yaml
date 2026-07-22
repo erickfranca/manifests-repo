@@ -6,5 +6,16 @@ metadata:
   labels:
     grafana_dashboard: "1"
 data:
-  {{ .Release.Namespace }}.json: |
-{{ .Files.Get "files/dashboards/task-api.json" | nindent 4 }}
+  {{ .Chart.Name }}.json: |
+{{- /* Step 1: Read the raw JSON file string */ -}}
+{{- $rawJson := .Files.Get (printf "files/dashboards/%s.json" .Chart.Name) }}
+{{- /* Step 2: Replace any hardcoded "inventory-service" inside PromQL queries with this Chart's name */ -}}
+{{- $rawJson = replace "inventory-service" .Chart.Name $rawJson }}
+{{- /* Step 3: Parse the updated JSON string into a Helm template memory object */ -}}
+{{- $dash := $rawJson | fromJson }}
+{{- /* Step 4: Dynamically override top-level dashboard properties */ -}}
+{{- $_ := set $dash "uid" .Chart.Name }}
+{{- $_ := set $dash "id" nil }}
+{{- $_ := set $dash "title" (replace "-" " " .Chart.Name | title) }}
+{{- /* Step 5: Convert back to pretty JSON and indent under data: */ -}}
+{{- $dash | toPrettyJson | nindent 4 }}
