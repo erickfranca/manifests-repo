@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: efranca/notification-service
-  tag: "2ff6a15"
+  tag: "880035f"
   pullPolicy: IfNotPresent
 
 service:
