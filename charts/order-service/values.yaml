@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: efranca/order-service
+  tag: "2ff6a15"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8087
