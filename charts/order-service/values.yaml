@@ -5,6 +5,11 @@ image:
   tag: "b46a2bd"
   pullPolicy: IfNotPresent
 
+env:
+  paymentUrl: "http://payment-service.payment-service.svc.cluster.local:8088"
+  shippingUrl: "http://shipping-service.shipping-service.svc.cluster.local:8089"
+
 service:
   type: ClusterIP
   port: 8087
+

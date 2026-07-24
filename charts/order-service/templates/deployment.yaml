@@ -18,6 +18,11 @@ spec:
         - name: {{ .Release.Namespace }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: SERVICES_PAYMENT_URL
+              value: {{ .Values.env.paymentUrl }}
+            - name: SERVICES_SHIPPING_URL
+              value: {{ .Values.env.shippingUrl }}
           ports:
             - containerPort: {{ .Values.service.port }}
           readinessProbe:
