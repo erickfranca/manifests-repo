@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: shipping-service
+  namespace: argocd
+spec:
+  project: tracing-lab
+  source:
+    repoURL: https://github.com/erickfranca/manifests-repo.git
+    targetRevision: main
+    path: charts/shipping-service
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: shipping-service
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

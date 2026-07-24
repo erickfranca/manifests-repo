@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: payment-service
+  namespace: argocd
+spec:
+  project: tracing-lab
+  source:
+    repoURL: https://github.com/erickfranca/manifests-repo.git
+    targetRevision: main
+    path: charts/payment-service
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: payment-service
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
