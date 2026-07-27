@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: efranca/order-service
-  tag: "7b2807d"
+  tag: "c01804e"
   pullPolicy: IfNotPresent
 
 env:
