@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: efranca/shipping-service
-  tag: "6bf1ea1"
+  tag: "0e07a79"
   pullPolicy: IfNotPresent
 
 service:
