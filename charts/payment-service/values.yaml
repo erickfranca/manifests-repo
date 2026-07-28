@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: efranca/payment-service
-  tag: "c4b1374"
+  tag: "a5e7b55"
   pullPolicy: IfNotPresent
 
 service:
