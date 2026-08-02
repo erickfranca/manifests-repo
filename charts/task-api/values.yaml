@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: efranca/task-api
-  tag: "56f05a4"
+  tag: "e56d468"
   pullPolicy: IfNotPresent
 
 service:
