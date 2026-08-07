@@ -18,6 +18,13 @@ spec:
         - name: {{ .Release.Namespace }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "1Gi"
+            limits:
+              cpu: "1"
+              memory: "2Gi"
           ports:
             - containerPort: {{ .Values.service.port }}
           readinessProbe:
