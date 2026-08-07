@@ -23,6 +23,13 @@ spec:
               value: {{ .Values.env.paymentUrl }}
             - name: SERVICES_SHIPPING_URL
               value: {{ .Values.env.shippingUrl }}
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "1Gi"
+            limits:
+              cpu: "1"
+              memory: "2Gi"
           ports:
             - containerPort: {{ .Values.service.port }}
           readinessProbe:
