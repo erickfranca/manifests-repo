@@ -11,6 +11,8 @@ spec:
       app: {{ .Release.Namespace }}
   template:
     metadata:
+      annotations:
+        instrumentation.opentelemetry.io/inject-java: "monitoring/otel-instrumentation"
       labels:
         app: {{ .Release.Namespace }}
     spec:
