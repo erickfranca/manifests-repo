@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: efranca/node-order-service
+  tag: "ec29225"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3001
+
