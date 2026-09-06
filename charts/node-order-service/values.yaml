@@ -1,10 +1,8 @@
 replicaCount: 1
-
 image:
   repository: 184239210367.dkr.ecr.us-east-1.amazonaws.com/node-order-service
-  tag: "ec29225"
+  tag: "ab215e4"
   pullPolicy: IfNotPresent
-
 service:
   type: ClusterIP
   port: 3001
