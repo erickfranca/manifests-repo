@@ -1,11 +1,16 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout 
 metadata:
   name: {{ .Release.Namespace }}
   labels:
     app: {{ .Release.Namespace }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  strategy:
+    blueGreen:
+      activeService: {{ .Chart.Name }}
+      previewService: {{ .Chart.Name }}-preview
+      autoPromotionEnabled: false
   selector:
     matchLabels:
       app: {{ .Release.Namespace }}
