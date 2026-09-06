@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: 184239210367.dkr.ecr.us-east-1.amazonaws.com/node-payment-service
+  tag: "cfa7bcf"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3002
