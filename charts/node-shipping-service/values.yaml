@@ -1,10 +1,8 @@
 replicaCount: 1
-
 image:
   repository: 184239210367.dkr.ecr.us-east-1.amazonaws.com/node-shipping-service
-  tag: "822ff4d"
+  tag: "ba364fb"
   pullPolicy: IfNotPresent
-
 service:
   type: ClusterIP
   port: 3003
