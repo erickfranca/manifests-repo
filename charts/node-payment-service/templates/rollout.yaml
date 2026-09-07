@@ -25,6 +25,10 @@ spec:
         - name: {{ .Release.Namespace }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.env }}
+          env:
+            {{- toYaml .Values.env | nindent 12 }}
+          {{- end }}
           resources:
             requests:
               cpu: "500m"
