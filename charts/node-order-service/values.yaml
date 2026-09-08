@@ -1,7 +1,7 @@
 replicaCount: 4
 image:
   repository: 184239210367.dkr.ecr.us-east-1.amazonaws.com/node-order-service
-  tag: "9e702d5"
+  tag: "769423b"
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
