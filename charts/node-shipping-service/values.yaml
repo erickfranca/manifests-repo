@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
   repository: 184239210367.dkr.ecr.us-east-1.amazonaws.com/node-shipping-service
-  tag: "9998860"
+  tag: "448f228"
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
