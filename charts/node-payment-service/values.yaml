@@ -1,7 +1,7 @@
 replicaCount: 3
 image:
   repository: 184239210367.dkr.ecr.us-east-1.amazonaws.com/node-payment-service
-  tag: "7c82a38"
+  tag: "d64b3b3"
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
