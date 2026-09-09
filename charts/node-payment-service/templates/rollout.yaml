@@ -31,11 +31,11 @@ spec:
           {{- end }}
           resources:
             requests:
-              cpu: "500m"
-              memory: "1Gi"
+              cpu: "50m"
+              memory: "96Mi"
             limits:
               cpu: "500m"
-              memory: "1Gi"
+              memory: "256Mi"
           ports:
             - containerPort: {{ .Values.service.port }}
           readinessProbe:
